@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import { Button, ButtonBox } from './Feadback.styled';
 
-export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
+const btnName = ['good', 'neutral', 'bad'];
+export const FeedbackOptions = ({ onLeaveFeedback }) => (
   <ButtonBox>
-    {options.map(btn => (
+    {btnName.map(btn => (
       <Button
         key={btn}
         value={btn}

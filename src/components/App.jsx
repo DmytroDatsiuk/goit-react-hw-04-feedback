@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { AppBox, StatisticTitle } from './App.styled';
 import { FeedbackOptions } from './Feadback/FeadbackOptions';
@@ -42,16 +41,11 @@ export const App = () => {
     return Math.trunc((good / countTotalFeedback()) * 100);
   };
 
-  const btnName = ['good', 'neutral', 'bad'];
-
   return (
     <AppBox>
       <GlobalStyle />
       <Section title="Please leave feadback">
-        <FeedbackOptions
-          options={btnName}
-          onLeaveFeedback={onLeaveFeedback}
-        ></FeedbackOptions>
+        <FeedbackOptions onLeaveFeedback={onLeaveFeedback}></FeedbackOptions>
         <StatisticTitle>Statistic</StatisticTitle>
         {countTotalFeedback() === 0 ? (
           <Notification message="There is no feedback" />
